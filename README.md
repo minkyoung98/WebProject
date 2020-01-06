@@ -39,7 +39,7 @@ Windows 보안 경고 창에서 아파치 웹서버에 접근할 수 있게 허�
 초록색은 모든 서비스가 문제 없이 동작 중인 상태이다.<br>
 <img src="https://user-images.githubusercontent.com/48309721/71798080-0a0ae280-3094-11ea-98ab-a5b00ac2cb5e.JPG" width="70"></img>
 
-설치된 wamp64의 www경로에 assets폴더와 project폴더를 넣어준다. 주소창에 localhost/project 경로를 검색하면 project폴더에있는 index.php파일이 실행된다. assets에는 layout 관련 폴더들이 들어있는데, 이 폴더들은 project폴더 안의 php 파일에서 불러온다.
+설치된 wamp64의 www경로에 assets폴더와 project폴더를 넣어준다. 주소창에 localhost/project 경로를 검색하면 project폴더에있는 index.php파일이 실행된다. assets에는 layout 관련 폴더들이 들어있는데, 이 폴더들은 project폴더 안의 php 파일에서 불러온다.<br>
 <img src="https://user-images.githubusercontent.com/48309721/71799939-05e1c380-309a-11ea-8f5c-ef1490aae89c.JPG" width="700"></img>
 
 
