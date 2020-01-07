@@ -69,5 +69,8 @@ SET PASSWORD FOR root@localhost = PASSWORD('your_root_password');
 실행을 누르면 나오는 창에서 다음과 같이 입력해주고 저장을 누르면 테이블이 생성된다.
 <img src="https://user-images.githubusercontent.com/48309721/71803609-97563300-30a4-11ea-8fac-ccc90b26c07c.JPG" height="100"></img><br>
 
-* 게시판 관련 table생성
-
+* 게시판 관련 table생성<br>
+홈페이지에 필요한 게시판은 그린의 가구, 주문문의, 고객상담, A/S접수, 공지사항, 고객후기, 전체글 이렇게 7개 이다.<br>
+<img src="https://user-images.githubusercontent.com/48309721/71807491-c7a2cf00-30ae-11ea-8d04-ba711b0c8be4.JPG" ></img><br>
+위의 그림은 all_question 테이블 생성과정이다 위의 그림과 같은 칼럼내용으로 all_question, a_s, customer_reviews, notice, order_inquiry, user_info 테이블을 생성해준다.
+<br>
