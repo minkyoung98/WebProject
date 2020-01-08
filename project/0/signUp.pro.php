@@ -5,7 +5,7 @@ $pwc=$_POST['pwc'];
 $name=$_POST['name'];
 
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 
@@ -31,12 +31,10 @@ if($pw!=$pwc)
     exit();
 }
 
-
 $select_query = "SELECT id FROM user_info WHERE id='$id' ";
 $result_set = mysqli_query($conn, $select_query)or die(mysqli_error($conn));
 $count = mysqli_num_rows($result_set);
 echo $count;
-
 
 if($count > 0){
     echo"<script>alert(\"이미 사용중인 아이디 입니다.\");
@@ -53,7 +51,6 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo"<script>alert(\"가입 실패.\");</script>";
 }
-
 
 $conn->close();
 

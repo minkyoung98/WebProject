@@ -66,25 +66,26 @@ table{
             </tr>
             <tr>
                 <th><label for="pw" class="form-control"> *비밀번호</label></th>
-                <td><input type="text" name="pw" id="text" class="form-control" placeholder="비밀번호 입력" required "required"><br></td>
+                <td><input type="text" name="pw" id="text" class="form-control" placeholder="비밀번호 입력" required ="required"><br></td>
                 <!-- <td><input id="text" type="text" name="pw"></td> -->
             </tr>
             <tr>
                 <th><label for="pwc" class="form-control"> *비밀번호 확인</label></th>
-                <td><input type="text" name="pwc" id="text" class="form-control" placeholder="비밀번호 확인" required "required"><br></td>
+                <td><input type="text" name="pwc" id="text" class="form-control" placeholder="비밀번호 확인" required ="required"><br></td>
                 <!-- <td><input id="text" type="text" name="pwc"></td> -->
             </tr>
             <tr>
                 <th><label for="name" class="form-control"> *이름</label></th>
-                <td><input type="text" name="name" id="text" class="form-control" placeholder="이름 입력" required "required"><br></td>
+                <td><input type="text" name="name" id="text" class="form-control" placeholder="이름 입력" required ="required"><br></td>
                 <!-- <td><input id="text" type="text" name="name"></td> -->
             </tr>
         </table>                
         <div class="button">
             <button type="submit" class="btn btn-secondary">가입하기</button>
         </div>
-    </div>
-</form>
+    </form>
+</div>
+
 </main>
 </section><!-- /section -->
 <?php include '../footer.inc.php' ?>

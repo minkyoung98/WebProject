@@ -2,7 +2,7 @@
 $seq = isset($_GET['seq']) ? $_GET['seq'] : exit;
 $category = $_POST['category'];
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 

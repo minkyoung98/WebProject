@@ -110,9 +110,7 @@ BBS;
                 }
             } else {
                 echo <<< NOBBS
-                    <tr>
-                        <td colspan="6">작성된 글이 없습니다.</td>
-                    <tr>
+                작성된 글이 없습니다.
 NOBBS;
             }
             $conn->close();

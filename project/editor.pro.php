@@ -7,7 +7,7 @@ $category = $_POST['category'];
 $question = $_POST['question'];
 
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 
@@ -57,7 +57,7 @@ $category = $_POST['category'];
 $question = $_POST['question'];
 
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 

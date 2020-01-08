@@ -52,6 +52,12 @@
     </div>
 </aside>
 <main id="main" class="pl-5 pt-4 pr-5 border-left">
+    <h3 class="pb-3 mb-4 font-italic border-bottom">Order Made</h3>
+    <div class="blog-post">
+        <div class="location">
+            <p><a href="/project/index.php">메인화면</a> &gt; <a href="#">가구주문</a > &gt; <a href="#">주문문의</a></p>
+        </div>
+    </div><!-- /.blog-post -->
 <div class="row">
     <main role="main" class="main">
     <form id="cate" action="../editor.php" method="post">
@@ -71,11 +77,11 @@
         <hr>
         <table class="table table-bordered table-striped">
             <colgroup>
-                <col width="10%">
-                <col width="15%">
+                <col width="12%">
+                <col width="20%">
                 <col width="*">
-                <col width="15%">
-                <col width="15%">
+                <col width="20%">
+                <col width="20%">
             </colgroup>
             <thead>
                 <tr>
@@ -103,9 +109,7 @@ BBS;
                 }
             } else {
                 echo <<< NOBBS
-                    <tr>
-                        <td colspan="6">작성된 글이 없습니다.</td>
-                    <tr>
+                작성된 글이 없습니다.
 NOBBS;
             }
             $conn->close();

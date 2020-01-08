@@ -4,7 +4,7 @@
 $seq = isset($_GET['seq']) ? $_GET['seq'] : die();
 
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 
@@ -23,10 +23,6 @@ $result = $conn->query($sql);
 
 $sql_next = "SELECT * FROM notice WHERE seq = $seq+1";
 $result_next = $conn->query($sql_next);
-
-
-
-
 
 $title = '';
 $question = '';
@@ -216,11 +212,23 @@ section{
                 </table>
                 <br>
                 
-                <form id="cate" action = "../editor.update.php?seq=<?php echo $seq ?>" method="post">
-                    <button id="index" type="button" class="btn btn-secondary">목록으로</button>
-                    <input type="hidden" name="category" id="category" value="공지사항">
-                    <button type="submit" class="btn btn-secondary">수정</button>
-                </form>           
+                <form id="cate" action = "../editor.update.php?seq=<?php echo $seq ?>" method="post">         
+        
+                <button id="index" type="button" class="btn btn-secondary">목록으로</button>
+                    <?php
+                        if(isset($_SESSION['id'])){
+                            if($_SESSION['id']==$userid){
+                                //로그인 후
+                                echo '<input type="hidden" name="category" id="category" value="A/S접수">
+                                <button type="submit" class="btn btn-secondary">수정</button>';
+                            }
+                        }
+                        else{
+                            //로그인 전
+                            echo '';
+                        }
+                    ?>
+                </form>          
         </main>           
     </div>
 </main>

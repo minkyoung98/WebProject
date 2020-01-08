@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 

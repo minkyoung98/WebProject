@@ -1,7 +1,7 @@
 
 <?php
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 
@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 $seq = isset($_GET['seq']) ? $_GET['seq'] : die();
 
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 
@@ -231,10 +231,12 @@ section{
         
                 <button id="index" type="button" class="btn btn-secondary">목록으로</button>
                     <?php
-                        if($_SESSION['id']=$userid){
-                            //로그인 후
-                            echo '<input type="hidden" name="category" id="category" value="A/S접수">
-                            <button type="submit" class="btn btn-secondary">수정</button>';
+                        if(isset($_SESSION['id'])){
+                            if($_SESSION['id']==$userid){
+                                //로그인 후
+                                echo '<input type="hidden" name="category" id="category" value="A/S접수">
+                                <button type="submit" class="btn btn-secondary">수정</button>';
+                            }
                         }
                         else{
                             //로그인 전
@@ -242,8 +244,6 @@ section{
                         }
                     ?>
                 </form>
-
-               
         </main>           
     </div>
 </main>

@@ -87,7 +87,7 @@
 <form action="editor.pro.php" method="post">
     <input type="hidden" name="mode" value="insert">
     <?php
-        echo '<input type="hidden" name="id" value="'.$_SESSION['name'].'">'
+        echo '<input type="hidden" name="id" value="'.$_SESSION['id'].'">'
     ?>
    
     <div><h2>글 작성</h2></div>

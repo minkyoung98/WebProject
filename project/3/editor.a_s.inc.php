@@ -77,11 +77,11 @@
         <hr>
         <table class="table table-bordered table-striped">
             <colgroup>
-                <col width="10%">
+                <col width="12%">
                 <col width="15%">
                 <col width="*">
-                <col width="15%">
-                <col width="15%">
+                <col width="20%">
+                <col width="20%">
             </colgroup>
             <thead>
                 <tr>
@@ -109,9 +109,8 @@ BBS;
                 }
             } else {
                 echo <<< NOBBS
-                    <tr>
-                        <td colspan="6">작성된 글이 없습니다.</td>
-                    <tr>
+                    작성된 글이 없습니다.
+                    
 NOBBS;
             }
             $conn->close();

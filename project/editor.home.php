@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "smu";
+$username = "root";
 $password = "1234";
 $dbname = "project";
 
@@ -41,9 +41,7 @@ BBS;
                 }
             } else {
                 echo <<< NOBBS
-                    <tr>
-                        <td colspan="4">작성된 글이 없습니다.</td>
-                    <tr>
+                작성된 글이 없습니다.
 NOBBS;
             }
             $conn->close();
