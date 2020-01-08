@@ -81,3 +81,99 @@ ___
 결과적으로 위의 그림과 같이 project DB에 8개의 테이블이 생성되었다.
 <br><br>
 # 2.웹 페이지 기능
+# 2.1 검색 기능
+<img src="https://user-images.githubusercontent.com/48309721/71948482-7d872e00-3213-11ea-8747-83dfefa9fea2.JPG" width="500"></img><br>
+상단부의 텍스트박스와 버튼을 이용하여 웹페이지에 작성되어있는 전체 글 중에서 검색어가 포함된 제목의 글을 찾을 수 있다.
+"주문" 이라는 검색어를 텍스트박스에 입력하고 검색을 누르면 다음과 같이 결과를 보여주는 창이 뜬다.
+<br>
+<img src="https://user-images.githubusercontent.com/48309721/71948480-7d872e00-3213-11ea-8786-151b21dbb8ba.JPG" width="600"></img>
+
+<C:\wamp64\www\project\header.inc.php>
+```html
+    <form class="form-inline" action="editor.search.php" method="post">
+        <img id="magnifyingGlass" src="/project/magnifying_glass.png">
+        <label for="search" class="sr-only">검색</label>
+        <input type="text" name="search" id="search" class="form-control mr-sm-0" placeholder="search" required="required"><br>
+        <button class="btn btn-outline-secondary" type="submit">검색</button>
+    </form>
+```
+검색 버튼을 누르면 입력된 텍스트 값을 editor.search.php로 POST 형식으로 보낸다. 이때 텍스트값의 required 속성을 "required"로 설정해 주어서 텍스트박스에 값이 입력되어야만 검색 버튼을 누를 수 있게 해준다.
+
+<br>
+
+<C:\wamp64\www\project\editor.search.php>
+```php
+$search=$_POST['search'];
+```
+header.inc.php에서 받은값을 변수 $search에 저장한다.
+
+```php
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+$dbname = "project";
+$search=$_POST['search'];
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM all_question WHERE title LIKE '%$search%' ORDER BY seq DESC ";
+$result = $conn->query($sql);
+?>
+```
+SELECT 문을 사용하여 project DB의 all_question테이블에서 title속성의 값에 $search 가 포함된 행의 모든 속성값을 가져와 seq 속성값의 내림차순으로 $result에 저장한다.
+
+<br>
+
+<C:\wamp64\www\project\editor.search.inc.php>
+```html
+        <table class="table table-bordered table-striped">
+            <colgroup>
+                <col width="10%">
+                <col width="15%">
+                <col width="*">
+                <col width="15%">
+                <col width="15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>카테고리</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>등록일</th>    
+                </tr>
+            </thead> 
+            <tbody>
+        <?php
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo <<< BBS
+                    <tr id="text">
+                        <td>{$row['seq']}</td>
+                        <td>{$row['category']}</td>
+                        <td>{$row['title']}</td>
+                        <td>{$row['userid']}</td>
+                        <td>{$row['reg_date']}</td>
+                    </tr>
+BBS;
+                }
+            } else {
+                echo <<< NOBBS
+                    <tr>
+                        <td colspan="6">검색 결과가 없습니다.</td>
+                    <tr>
+NOBBS;
+            }
+            $conn->close();
+        ?>
+            </tbody>
+        </table>
+```
+$result에 저장된 값을 테이블형식으로 입력해준다.
