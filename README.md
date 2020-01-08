@@ -57,7 +57,7 @@ root 사용자의 암호를 지정하기 위해서 WampServer 트레이 아이�
 ```
 SET PASSWORD FOR root@localhost = PASSWORD('your_root_password');
 ```
-주소창에 localhost/phpmyadmin을 검색하면 나오는 다음 창에서 아이디 root와 설정해준 비밀번호를 입력하여 DB에 접속한다.
+주소창에 localhost/phpmyadmin을 검색하면 나오는 다음 창에서 아이디 root와 설정해준 비밀번호를 입력하여 DB에 접속한다.<br>
 <img src="https://user-images.githubusercontent.com/48309721/71802945-ba7fe300-30a2-11ea-8575-278c55720ad4.JPG" width="500"></img><br>
 <img src="https://user-images.githubusercontent.com/48309721/71803021-f6b34380-30a2-11ea-9dbe-e22ed2f5edb3.JPG" width=""></img><br>
 <img src="https://user-images.githubusercontent.com/48309721/71803185-67f2f680-30a3-11ea-8da5-1ec69b2228b1.JPG" width="500"></img><br>
@@ -78,6 +78,6 @@ SET PASSWORD FOR root@localhost = PASSWORD('your_root_password');
 <img src="https://user-images.githubusercontent.com/48309721/71947792-4b74cc80-3211-11ea-9d5a-ecc6cfad03f8.JPG" ></img><br>
 ___
 <img src="https://user-images.githubusercontent.com/48309721/71947896-a5759200-3211-11ea-8487-f77b4b940367.JPG" ></img>
-결과적으로 그림과 같이 project DB에 8개의 테이블이 생성되었다.
+결과적으로 위의 그림과 같이 project DB에 8개의 테이블이 생성되었다.
 <br><br>
 # 2.웹 페이지 기능
