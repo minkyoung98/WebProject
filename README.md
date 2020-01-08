@@ -80,6 +80,7 @@ ___
 <img src="https://user-images.githubusercontent.com/48309721/71947896-a5759200-3211-11ea-8487-f77b4b940367.JPG" ></img>
 결과적으로 위의 그림과 같이 project DB에 8개의 테이블이 생성되었다.
 <br><br>
+
 # 2.웹 페이지 기능
 # 2.1 검색 기능
 <img src="https://user-images.githubusercontent.com/48309721/71948482-7d872e00-3213-11ea-8747-83dfefa9fea2.JPG" width="500"></img><br>
