@@ -65,7 +65,7 @@ SET PASSWORD FOR root@localhost = PASSWORD('your_root_password');
 * 로그인 회원가입 관련 table생성<br>
 <img src="https://user-images.githubusercontent.com/48309721/71803519-53fbc480-30a4-11ea-8da2-c12fc1a1f81e.JPG" width="300"></img><br>
 생성된 project DB에 새 테이블 만들기를 이용하여 'user_info" 테이블을 생성해 준다. 
-<img src="https://user-images.githubusercontent.com/48309721/71803463-3169ab80-30a4-11ea-8eb8-204d30f19358.JPG" width=""></img><br>
+<img src="https://user-images.githubusercontent.com/48309721/71948019-01401b00-3212-11ea-9032-db6fdb36be53.JPG" width=""></img><br>
 실행을 누르면 나오는 창에서 다음과 같이 입력해주고 저장을 누르면 테이블이 생성된다.
 <img src="https://user-images.githubusercontent.com/48309721/71803609-97563300-30a4-11ea-8fac-ccc90b26c07c.JPG" height="100"></img><br>
 
@@ -74,3 +74,10 @@ SET PASSWORD FOR root@localhost = PASSWORD('your_root_password');
 <img src="https://user-images.githubusercontent.com/48309721/71807491-c7a2cf00-30ae-11ea-8d04-ba711b0c8be4.JPG" ></img><br>
 위의 그림은 all_question 테이블 생성과정이다 위의 그림과 같은 칼럼내용으로 all_question, a_s, customer_reviews, notice, order_inquiry, user_info 테이블을 생성해준다.
 <br>
+그린의 가구 게시판의 경우 이미지가 들어가야 함으로 아래와 같은 칼럼내용으로 gallery 테이블을 생성해준다.
+<img src="https://user-images.githubusercontent.com/48309721/71947792-4b74cc80-3211-11ea-9d5a-ecc6cfad03f8.JPG" ></img><br>
+___
+<img src="https://user-images.githubusercontent.com/48309721/71947896-a5759200-3211-11ea-8487-f77b4b940367.JPG" ></img>
+결과적으로 그림과 같이 project DB에 8개의 테이블이 생성되었다.
+<br><br>
+# 2.웹 페이지 기능
