@@ -63,16 +63,10 @@
                         <h2 class="blog-post-title pb-2">개인결제창</h2>
                     </div>
                     <div class="header-right">
-
+                        <a href="/project/index.php">메인화면</a> &gt; <a href="#">커뮤니티</a > &gt; <a href="#">개인결제창</a>
                     </div>
-                </div>
-
-
-                <div class="location">
-                    <p><a href="/project/index.php">메인화면</a> &gt; <a href="#">커뮤니티</a > &gt; <a href="#">개인결제창</a></p>
-                </div>
-                
-                <br>
+                </div>                
+                <br><br><br>
             </div><!-- /.blog-post -->
         </main>
     </div>

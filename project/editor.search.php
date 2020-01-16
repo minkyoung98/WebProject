@@ -28,6 +28,7 @@ $result = $conn->query($sql);
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
     <link href="index2.css" rel="stylesheet">
+    <link href="index3.css" rel="stylesheet">
     <title>그린가구</title>
     <style>
     table, td, th{
@@ -44,48 +45,15 @@ $result = $conn->query($sql);
 </head>
 <body>
 
-<?php include 'header.inc.php'; ?>
-<?php include 'nav.inc.php'; ?>
-<?php include 'editor.search.inc.php'; ?>
-<?php include 'footer.inc.php'; ?>
+<div class="frame" id="header">
+    <?php include 'header.inc.php'; ?>
+    <?php include 'nav.inc.php'; ?>
+    <?php include 'editor.search.inc.php'; ?>
+    <div style="padding-top: 1000px;"></div>
+    <?php include 'footer.inc.php'; ?>
+</div>
+
 <a href="#logo"><div class="floating"></div></a>
 
-<script src="/assets/js/jquery-3.3.1.min.js"></script>
-<script src="/assets/js/popper.min.js"></script>
-<script src="/assets/bootstrap-4.1.1/js/bootstrap.min.js"></script>
-<script src="index.js"></script>
-<script src="index2.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#basicNav #navCompany').addClass('clicked');
-        $('#sideNav #dropCompany').show();
-        $('#sideNav #dropCompany > a:first-child').css({
-            'font-weight': 'bold',
-            color: 'salmon'
-        });
-    });
-    $('#sideNav #navCompany').hover(function() {
-        $('#sideNav #dropCompany').show();        
-    }, function() {
-        $('#sideNav #dropCompany').show();
-    });
-
-
-    
-    $(document).on('click', '.table td', function(){
-        var seq = $(this).parent().find(':eq(0)').text();
-        //console.log(seq);
-        $.get('text_form.all_question.php',{
-            seq: seq
-        }).done(function(data){
-            if($.trim(data)){
-                //$('#pocket').html(data);
-                location.href = 'text_form.all_question.php?seq='+ seq; 
-               // $('#exampleModal').modal('show');    
-            }
-        });
-    }); 
-    
-</script>
 </body>
 </html>

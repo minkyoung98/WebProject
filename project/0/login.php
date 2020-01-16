@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="logo.png">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
     <link href="../index.css" rel="stylesheet">
+    <link href="../index3.css" rel="stylesheet">
     <title>그린가구</title>
 <style>
     .form-signin{
@@ -19,23 +20,23 @@
 </head>
 <body>
 
-<?php include '../header.inc.php'; ?>
-<?php include '../nav.inc.php'; ?>
+<div class="frame" id="header">
+    <?php include '../header.inc.php'; ?>
+    <?php include '../nav.inc.php'; ?>
+        <section id="section">
+            <main id="main" class="pt-4">    
+                <form class="form-signin" action="login.pro.php" method="post">     
+                    <label for="userid" class="sr-only">아이디</label>
+                    <input type="text" name="id" id="userid" class="form-control" placeholder="사용자 아이디" required autofocus><br>
+                    <label for="passwd" class="sr-only">비밀번호</label>
+                    <input type="password" name="pw" id="passwd" class="form-control" placeholder="사용자 비밀번호" required="required"><br>
+                    <button class="btn btn-secondary" type="submit">로그인</button>
+                </form>
+            </main>
+        </section><!-- /section -->
+    <?php include '../footer.inc.php' ?>
+</div>
 
-<section id="section">
-<main id="main" class="pl-5 pt-4 pr-5 border-left">
-    
-    <form class="form-signin" action="login.pro.php" method="post">     
-        <label for="userid" class="sr-only">아이디</label>
-        <input type="text" name="id" id="userid" class="form-control" placeholder="사용자 아이디" required autofocus><br>
-        <label for="passwd" class="sr-only">비밀번호</label>
-        <input type="password" name="pw" id="passwd" class="form-control" placeholder="사용자 비밀번호" required="required"><br>
-        <button class="btn btn-secondary" type="submit">로그인</button>
-    </form>
-
-</main>
-</section><!-- /section -->
-<?php include '../footer.inc.php' ?>
 <a href="#logo"><div class="floating"></div></a>
 
 <script src="/assets/js/jquery-3.3.1.min.js"></script>

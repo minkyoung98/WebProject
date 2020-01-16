@@ -48,13 +48,10 @@ NOBBS;
         ?>
             </tbody>
         </table>
-    </main>
-    </div>
-</div>
 <div id="pocket"></div>
 
 <script>
-$(document).on('click', '#menu1_2 table .notice' , function(){
+$(document).on('click', '#include2 .table .notice' , function(){
     var seq = $(this).parent().find(':eq(0)').text();
     $.get('/project/4/text_form.notice.php',{
         seq: seq

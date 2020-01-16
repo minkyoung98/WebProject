@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="logo.png">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
     <link href="../index.css" rel="stylesheet">
+    <link href="../index3.css" rel="stylesheet">
     <title>그린가구</title>
     <style>
     section{
@@ -39,22 +40,24 @@
 </head>
 <body>
 
-<?php include '../header.inc.php'; ?>
-<?php include '../nav.inc.php'; ?>
+<div class="frame" id="header">
+    <?php include '../header.inc.php'; ?>
+    <?php include '../nav.inc.php'; ?>
+        <section id="section">
+        <main id="main" class="pt-4">
+            
+            <div id="text">가입 완료
+                <br>       
+            </div>
+            <div id="button">
+            <a class="btn btn-secondary" href="login.php">로그인창으로 이동</a>
+            <a class="btn btn-secondary" href="../index.php">시작페이지로 이동</a>
+            </div>
+        </main>
+        </section><!-- /section -->
+    <?php include '../footer.inc.php' ?>
+</div>
 
-<section id="section">
-<main id="main" class="pl-5 pt-4 pr-5 border-left">
-    
-    <div id="text">가입 완료
-        <br>       
-    </div>
-    <div id="button">
-    <a class="btn btn-secondary" href="login.php">로그인창으로 이동</a>
-    <a class="btn btn-secondary" href="../index.php">시작페이지로 이동</a>
-    </div>
-</main>
-</section><!-- /section -->
-<?php include '../footer.inc.php' ?>
 <a href="#logo"><div class="floating"></div></a>
 
 <script src="/assets/js/jquery-3.3.1.min.js"></script>

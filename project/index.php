@@ -58,7 +58,6 @@
 <div class="frame" id="header">
     <?php include 'header.inc.php'; ?>     
     <?php include 'nav.inc.php'; ?>
-
         <div id="main" class="content">
             <div>
                 <div id="mainPic"></div>

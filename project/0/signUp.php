@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="logo.png">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
     <link href="../index.css" rel="stylesheet">
+    <link href="../index3.css" rel="stylesheet">
     <title>그린가구</title>
 <style>
 table, th, td{
@@ -48,47 +49,50 @@ table{
 </head>
 <body>
 
-<?php include '../header.inc.php'; ?>
-<?php include '../nav.inc.php'; ?>
+<div class="frame" id="header">
+    <?php include '../header.inc.php'; ?>
+    <?php include '../nav.inc.php'; ?>
 
-<section id="section">
-<main id="main" class="pl-5 pt-4 pr-5 border-left">
-    
-<div id="form">
-    <div id="title">회원가입</div>
-    <hr>
-    <form  id="signUp" action="signUp.pro.php" method="post">
-        <table>
-            <tr>
-                <th><label for="id" class="form-control"> *아이디 </label></th>
-                <td><input type="text" name="id" id="text" class="form-control" placeholder="아이디 입력" required autofocus><br></td>
-                <!-- <td><input id="text" type="text" name="id" placehorder="아이디 입력"></td> -->
-            </tr>
-            <tr>
-                <th><label for="pw" class="form-control"> *비밀번호</label></th>
-                <td><input type="text" name="pw" id="text" class="form-control" placeholder="비밀번호 입력" required ="required"><br></td>
-                <!-- <td><input id="text" type="text" name="pw"></td> -->
-            </tr>
-            <tr>
-                <th><label for="pwc" class="form-control"> *비밀번호 확인</label></th>
-                <td><input type="text" name="pwc" id="text" class="form-control" placeholder="비밀번호 확인" required ="required"><br></td>
-                <!-- <td><input id="text" type="text" name="pwc"></td> -->
-            </tr>
-            <tr>
-                <th><label for="name" class="form-control"> *이름</label></th>
-                <td><input type="text" name="name" id="text" class="form-control" placeholder="이름 입력" required ="required"><br></td>
-                <!-- <td><input id="text" type="text" name="name"></td> -->
-            </tr>
-        </table>                
-        <div class="button">
-            <button type="submit" class="btn btn-secondary">가입하기</button>
-        </div>
-    </form>
+        <section id="section">
+        <main id="main" class="pt-4">
+            
+            <div id="form">
+                <div id="title">회원가입</div>
+                <hr>
+                <form  id="signUp" action="signUp.pro.php" method="post">
+                    <table>
+                        <tr>
+                            <th><label for="id" class="form-control"> *아이디 </label></th>
+                            <td><input type="text" name="id" id="text" class="form-control" placeholder="아이디 입력" required autofocus><br></td>
+                            <!-- <td><input id="text" type="text" name="id" placehorder="아이디 입력"></td> -->
+                        </tr>
+                        <tr>
+                            <th><label for="pw" class="form-control"> *비밀번호</label></th>
+                            <td><input type="text" name="pw" id="text" class="form-control" placeholder="비밀번호 입력" required ="required"><br></td>
+                            <!-- <td><input id="text" type="text" name="pw"></td> -->
+                        </tr>
+                        <tr>
+                            <th><label for="pwc" class="form-control"> *비밀번호 확인</label></th>
+                            <td><input type="text" name="pwc" id="text" class="form-control" placeholder="비밀번호 확인" required ="required"><br></td>
+                            <!-- <td><input id="text" type="text" name="pwc"></td> -->
+                        </tr>
+                        <tr>
+                            <th><label for="name" class="form-control"> *이름</label></th>
+                            <td><input type="text" name="name" id="text" class="form-control" placeholder="이름 입력" required ="required"><br></td>
+                            <!-- <td><input id="text" type="text" name="name"></td> -->
+                        </tr>
+                    </table>                
+                    <div class="button">
+                        <button type="submit" class="btn btn-secondary">가입하기</button>
+                    </div>
+                </form>
+            </div>
+
+        </main>
+        </section><!-- /section -->
+    <?php include '../footer.inc.php' ?>
 </div>
 
-</main>
-</section><!-- /section -->
-<?php include '../footer.inc.php' ?>
 <a href="#logo"><div class="floating"></div></a>
 
 <script src="/assets/js/jquery-3.3.1.min.js"></script>

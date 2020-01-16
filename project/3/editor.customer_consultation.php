@@ -27,6 +27,7 @@ $result = $conn->query($sql);
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="../index.css" rel="stylesheet">
     <link href="../index2.css" rel="stylesheet">
+    <link href="../index3.css" rel="stylesheet">
     <title>그린가구</title>
     <style>
     table, td, th{
@@ -43,10 +44,14 @@ $result = $conn->query($sql);
 </head>
 <body>
 
-<?php include '../header.inc.php'; ?>
-<?php include '../nav.inc.php'; ?>
-<?php include 'editor.customer_consultation.inc.php'; ?>
-<?php include '../footer.inc.php'; ?>
+<div class="frame" id="header">
+    <?php include '../header.inc.php'; ?>
+    <?php include '../nav.inc.php'; ?>
+    <?php include 'editor.customer_consultation.inc.php'; ?>
+    <div style="padding-top: 1000px;"></div>
+    <?php include '../footer.inc.php'; ?>
+</div>
+
 <a href="#logo"><div class="floating"></div></a>
 
 <script src="/assets/js/jquery-3.3.1.min.js"></script>

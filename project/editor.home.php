@@ -48,14 +48,11 @@ NOBBS;
         ?>
             </tbody>
         </table>
-    </main>
-    </div>
-</div>
 <div id="pocket"></div>
 
 <script>
 
-$(document).on('click', '.table td', function(){
+$(document).on('click', '#include .table td', function(){
     var seq = $(this).parent().find(':eq(0)').text();
     $.get('text_form.all_question.php',{
         seq: seq

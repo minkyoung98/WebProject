@@ -77,6 +77,7 @@ $conn->close();
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="../index.css" rel="stylesheet">
     <link href="../index2.css" rel="stylesheet">
+    <link href="../index3.css" rel="stylesheet">
     <title>그린가구</title>
     <style>
 table{
@@ -117,126 +118,130 @@ section{
 </style>
 </head>
 <body>
+<div class="frame" id="header">
+    <?php include '../header.inc.php'; ?>
+    <?php include '../nav.inc.php'; ?>
+    <section id="section">
+        <div class="left border-right">
+            <aside id="aside">
+                <div style="height: 40px;"></div>
+                <div id="picNav"></div>
+                <nav id="sideNav" class="navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/project/1/ideology.php" id="navCompany">‧ 회사소개</a>
+                            <div class="dropdown-menu" id="dropCompany">
+                                <a class="dropdown-item" href="/project/1/ideology.php">‧ 경영이념</a>
+                                <a class="dropdown-item" href="/project/1/vision.php">‧ 경영비젼</a>
+                                <a class="dropdown-item" href="/project/1/history.php">‧ 연혁</a>
+                                <a class="dropdown-item" href="/project/1/plan.php">‧ 사업계획</a>
+                                <a class="dropdown-item" href="/project/1/strategy.php">‧ 그린만의 전략</a>
+                                <a class="dropdown-item" href="/project/1/news.php">‧ 그린소식</a>
+                            </div> 
+                        </li><!-- /회사소개 -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/project/2/operation.php" id="navInvest">‧ 투자정보</a>
+                            <div class="dropdown-menu" id="dropInvest">
+                                <a class="dropdown-item" href="/project/2/operation.php">‧ 경영정보</a>
+                                <a class="dropdown-item" href="/project/2/finance.php">‧ 재무정보</a>
+                            </div>
+                        </li><!-- /투자정보 -->
+                        <li class="nav-item dropdown">
+                        <a class="nav-link" href="/project/3/furniture.php" id="navOrder">‧ 가구주문</a>
+                            <div class="dropdown-menu" id="dropOrder">
+                                <a class="dropdown-item" href="/project/3/furniture.php">‧ 그린의 가구</a>
+                                <a class="dropdown-item" href="/project/3/production_process.php">‧ 제작과정</a>
+                                <a class="dropdown-item" href="/project/3/delivery.php">‧ 배송과정</a>
+                                <a class="dropdown-item" href="/project/3/editor.order_inquiry.php">‧ 주문문의</a>
+                                <a class="dropdown-item" href="/project/3/editor.customer_consultation.php">‧ 고객상담</a>
+                                <a class="dropdown-item" href="/project/3/editor.a_s.php">‧ A/S 접수</a>
+                                <a class="dropdown-item" href="/project/3/serviceCenter.php">‧ 서비스센터</a>
+                            </div>
+                        </li><!-- /가구주문 -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/project/4/notice.php" id="navCommunity">‧ 커뮤니티</a>
+                            <div class="dropdown-menu" href="/project/4/editor.notice.php" id="dropCommunity">
+                                <a class="dropdown-item" href="/project/4/editor.notice.php">‧ 공지사항</a>
+                                <a class="dropdown-item" href="/project/4/editor.customer_reviews.php">‧ 고객후기</a>
+                                <a class="dropdown-item" href="/project/4/payment.php">‧ 개인결제창</a>
+                                <a class="dropdown-item" href="/project/4/map.php">‧ 찾아오시는 길</a>
+                            </div>
+                        </li><!-- /커뮤니티 -->
+                    </ul>
+                </nav>
+                <div id="familySite">
+                    <div>~&nbsp;&nbsp;family site&nbsp;&nbsp;~</div>
+                    <div><a href="">‧ 그린몰</a></div>
+                    <div><a href="">‧ 그린서비스센터</a></div>
+                </div>
+            </aside>
+        </div>
 
-<?php include '../header.inc.php'; ?>
-<?php include '../nav.inc.php'; ?>
-<section id="section">
-<aside id="aside">
-    <div style="height: 40px;"></div>
-    <div id="picNav"></div>
-    <nav id="sideNav" class="navbar">
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="/project/1/ideology.php" id="navCompany">‧ 회사소개</a>
-                <div class="dropdown-menu" id="dropCompany">
-                    <a class="dropdown-item" href="/project/1/ideology.php">‧ 경영이념</a>
-                    <a class="dropdown-item" href="/project/1/vision.php">‧ 경영비젼</a>
-                    <a class="dropdown-item" href="/project/1/history.php">‧ 연혁</a>
-                    <a class="dropdown-item" href="/project/1/plan.php">‧ 사업계획</a>
-                    <a class="dropdown-item" href="/project/1/strategy.php">‧ 그린만의 전략</a>
-                    <a class="dropdown-item" href="/project/1/news.php">‧ 그린소식</a>
-                </div> 
-            </li><!-- /회사소개 -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="/project/2/operation.php" id="navInvest">‧ 투자정보</a>
-                <div class="dropdown-menu" id="dropInvest">
-                    <a class="dropdown-item" href="/project/2/operation.php">‧ 경영정보</a>
-                    <a class="dropdown-item" href="/project/2/finance.php">‧ 재무정보</a>
-                </div>
-            </li><!-- /투자정보 -->
-            <li class="nav-item dropdown">
-            <a class="nav-link" href="/project/3/furniture.php" id="navOrder">‧ 가구주문</a>
-                <div class="dropdown-menu" id="dropOrder">
-                    <a class="dropdown-item" href="/project/3/furniture.php">‧ 그린의 가구</a>
-                    <a class="dropdown-item" href="/project/3/production_process.php">‧ 제작과정</a>
-                    <a class="dropdown-item" href="/project/3/delivery.php">‧ 배송과정</a>
-                    <a class="dropdown-item" href="/project/3/editor.order_inquiry.php">‧ 주문문의</a>
-                    <a class="dropdown-item" href="/project/3/editor.customer_consultation.php">‧ 고객상담</a>
-                    <a class="dropdown-item" href="/project/3/editor.a_s.php">‧ A/S 접수</a>
-                    <a class="dropdown-item" href="/project/3/serviceCenter.php">‧ 서비스센터</a>
-                </div>
-            </li><!-- /가구주문 -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="/project/4/notice.php" id="navCommunity">‧ 커뮤니티</a>
-                <div class="dropdown-menu" href="/project/4/editor.notice.php" id="dropCommunity">
-                    <a class="dropdown-item" href="/project/4/editor.notice.php">‧ 공지사항</a>
-                    <a class="dropdown-item" href="/project/4/editor.customer_reviews.php">‧ 고객후기</a>
-                    <a class="dropdown-item" href="/project/4/payment.php">‧ 개인결제창</a>
-                    <a class="dropdown-item" href="/project/4/map.php">‧ 찾아오시는 길</a>
-                </div>
-            </li><!-- /커뮤니티 -->
-        </ul>
-    </nav>
-    <div id="familySite">
-        <div>~&nbsp;&nbsp;family site&nbsp;&nbsp;~</div>
-        <div><a href="">‧ 그린몰</a></div>
-        <div><a href="">‧ 그린서비스센터</a></div>
-    </div>
-</aside>
-<main id="main" class="pl-5 pt-4 pr-5 border-left">
-<div class="row">
-        <main role="main" class="main">
+        <div class="right">
+        <main id="main" class="pt-4">
             <div id="title">고객상담</div>
             <hr>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="title">제목</th>
-                            <th colspan="5"><?php echo $title ?></th>
-                        </tr>
-                    </thead>
-                    <tbody id="main_table">
-                        <tr>
-                        <th class="title">작성자</th>
-                        <td><?php echo $userid ?></td>
-                        <th class="title">등록일</th>
-                        <td><?php echo $reg_date ?></td>
-                        <th class="title">No.</th>
-                        <td><?php echo $seq ?></td>
-                        </tr>
-                    
-                        <tr>
-                        <td colspan="8" class="memo"><?php echo $question ?></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <table id="table_navi">
-                    <tbody>
-                        <tr>
-                            <td class="navi_num">다음글</td>
-                            <td id="navi_next" class="navi_title"><?php echo $title_next ?></td>
-                        </tr>
-                        <tr>
-                            <td class="navi_num">이전글</td>
-                            <td id="navi_before" class="navi_title"><?php echo $title_before ?></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="title">제목</th>
+                        <th colspan="5"><?php echo $title ?></th>
+                    </tr>
+                </thead>
+                <tbody id="main_table">
+                    <tr>
+                    <th class="title">작성자</th>
+                    <td><?php echo $userid ?></td>
+                    <th class="title">등록일</th>
+                    <td><?php echo $reg_date ?></td>
+                    <th class="title">No.</th>
+                    <td><?php echo $seq ?></td>
+                    </tr>
                 
-                <form id="cate" action = "../editor.update.php?seq=<?php echo $seq ?>" method="post">         
-        
-                <button id="index" type="button" class="btn btn-secondary">목록으로</button>
-                    <?php
-                        if(isset($_SESSION['id'])){
-                            if($_SESSION['id']==$userid){
-                                //로그인 후
-                                echo '<input type="hidden" name="category" id="category" value="A/S접수">
-                                <button type="submit" class="btn btn-secondary">수정</button>';
-                            }
+                    <tr>
+                    <td colspan="8" class="memo"><?php echo $question ?></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table id="table_navi">
+                <tbody>
+                    <tr>
+                        <td class="navi_num">다음글</td>
+                        <td id="navi_next" class="navi_title"><?php echo $title_next ?></td>
+                    </tr>
+                    <tr>
+                        <td class="navi_num">이전글</td>
+                        <td id="navi_before" class="navi_title"><?php echo $title_before ?></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            
+            <form id="cate" action = "../editor.update.php?seq=<?php echo $seq ?>" method="post">         
+    
+            <button id="index" type="button" class="btn btn-secondary">목록으로</button>
+                <?php
+                    if(isset($_SESSION['id'])){
+                        if($_SESSION['id']==$userid){
+                            //로그인 후
+                            echo '<input type="hidden" name="category" id="category" value="고객상담">
+                            <button type="submit" class="btn btn-secondary">수정</button>';
                         }
-                        else{
-                            //로그인 전
-                            echo '';
-                        }
-                    ?>
-                </form>
-        </main>           
+                    }
+                    else{
+                        //로그인 전
+                        echo '';
+                    }
+                ?>
+            </form>
+        </main>
     </div>
-</main>
-</section><!-- /section -->
-<?php include '../footer.inc.php'; ?>
+    </section><!-- /section -->
+    <div style="padding-top: 1000px;"></div>
+    <?php include '../footer.inc.php'; ?>
+</div>
+
 <a href="#logo"><div class="floating"></div></a>
 
 <script src="/assets/js/jquery-3.3.1.min.js"></script>
@@ -246,17 +251,17 @@ section{
 <script src="../index2.js"></script>
 <script>
     $(document).ready(function() {
-        $('#basicNav #navCompany').addClass('clicked');
-        $('#sideNav #dropCompany').show();
-        $('#sideNav #dropCompany > a:first-child').css({
+        $('#basicNav #navOrder').addClass('clicked');
+        $('#sideNav #dropOrder').show();
+        $('#sideNav #dropOrder > a:nth-child(5)').css({
             'font-weight': 'bold',
             color: 'salmon'
         });
     });
-    $('#sideNav #navCompany').hover(function() {
-        $('#sideNav #dropCompany').show();        
+    $('#sideNav #navOrder').hover(function() {
+        $('#sideNav #dropOrder').show();        
     }, function() {
-        $('#sideNav #dropCompany').show();
+        $('#sideNav #dropOrder').show();
     });
 </script>
 <script>

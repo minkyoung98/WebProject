@@ -22,8 +22,8 @@ if($mode == 'insert'){
     
     $sql = "INSERT INTO all_question (userid, title, category, question) VALUES ('$userid', '$title', '$category', '$question')";
 
-} else if($mode == 'update'){
-    $sql = "UPDATE all_question SET title='$title', category='$category', question='$question', reg_date=NOW() WHERE seq=$seq";
+}else if($mode == 'update'){
+    $sql = "UPDATE all_question SET title='$title', category='$category', question='$question', reg_date=NOW() WHERE seq='$seq'";
 }
 
 if ($conn->query($sql) === TRUE) {
