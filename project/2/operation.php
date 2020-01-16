@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="../index.css" rel="stylesheet">
     <link href="../index2.css" rel="stylesheet">
+    <link href="../index3.css" rel="stylesheet">
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
@@ -36,10 +38,14 @@
 </head>
 <body>
 
-<?php include '../header.inc.php'; ?>
-<?php include '../nav.inc.php'; ?>
-<?php include 'operation_section.inc.php'; ?>
-<?php include '../footer.inc.php'; ?>
+<div class="frame" id="header">
+    <?php include '../header.inc.php'; ?>
+    <?php include '../nav.inc.php'; ?>
+    <?php include 'operation_section.inc.php'; ?>
+    <div style="padding-top: 1000px;"></div>
+    <?php include '../footer.inc.php'; ?>
+</div>
+
 <a href="#logo"><div class="floating"></div></a>
 
 <script src="/assets/js/jquery-3.3.1.min.js"></script>

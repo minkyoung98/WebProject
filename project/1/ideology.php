@@ -11,31 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="../index.css" rel="stylesheet">
     <link href="../index2.css" rel="stylesheet">
+    <link href="../index3.css" rel="stylesheet">
     <title>그린가구</title>
-    <style>
-        #top{
-            position: relative;
-            left: 92%;
-            top: 20px;
-        }
-        .footer{
-            padding-top: 1000px;
-        }
-        #sns{
-            position: relative;
-            left: 100px;
-            top: 20px;
-        }
-        div.left{
-            width: 25%;
-            float: left;
-        }
-        div.right{
-            width: 75%;
-            float: right;
-            padding-left: 30px;
-        }
-    </style>
 </head>
 <body>
 
@@ -43,12 +20,11 @@
     <?php include '../header.inc.php'; ?>
     <?php include '../nav.inc.php'; ?>
     <?php include 'ideology_section.inc.php'; ?>
+    <div style="padding-top: 1000px;"></div>
     <?php include '../footer.inc.php'; ?>
 </div>
 
-
 <a href="#logo"><div class="floating"></div></a>
-
 
 <script src="/assets/js/jquery-3.3.1.min.js"></script>
 <script src="/assets/js/popper.min.js"></script>
