@@ -93,7 +93,7 @@ $conn->close();
     <title>그린가구</title>
     <style>
 table{
-    width: 100%;
+    width: 650px;
 }
 table, th, td{
     border: 1px solid black;
@@ -126,6 +126,9 @@ section{
 .main{
     margin: 2em auto;
     width: 65%;
+}
+#main{
+    overflow: auto;
 }
 </style>
 </head>
@@ -211,7 +214,7 @@ section{
                         </tr>
                     
                         <tr>
-                        <td colspan="8" class="memo"><?php echo $question ?></td>
+                        <td colspan="6" class="memo"><?php echo $question ?></td>
                         </tr>
                     </tbody>
                 </table>

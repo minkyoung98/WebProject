@@ -4,7 +4,7 @@
 <div class="header">
     <div class="container">
         <div id="top">
-        <form class="form-inline" action="editor.search.php" method="post">
+        <form class="form-inline" action="/project/editor.search.php" method="post">
             <?php
             if(isset($_SESSION['name'])){
                 //로그인 후

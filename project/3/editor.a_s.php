@@ -40,6 +40,14 @@ $result = $conn->query($sql);
     .main{
         margin: 2em auto;
     }
+    table{
+    table-layout: fixed;
+    }
+    td{
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 </style>
 </head>
 <body>
