@@ -199,7 +199,7 @@ section{
                         </tr>
                     
                         <tr>
-                        <td colspan="8" class="memo"><?php echo $question ?></td>
+                        <td colspan="6" class="memo"><?php echo $question ?></td>
                         </tr>
                     </tbody>
                 </table>

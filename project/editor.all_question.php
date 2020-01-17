@@ -53,5 +53,22 @@ $result = $conn->query($sql);
 
 <a href="#logo"><div class="floating"></div></a>
 
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
+<script>
+
+    $(document).on('click', '.table td', function(){
+        var seq = $(this).parent().find(':eq(0)').text();
+        $.get('text_form.all_question.php',{
+            seq: seq
+        }).done(function(data){
+            if($.trim(data)){
+                //$('#pocket').html(data);
+                location.href = 'text_form.all_question.php?seq='+seq; 
+            // $('#exampleModal').modal('show');    
+            }
+        });
+    }); 
+</script>
+
 </body>
 </html>
