@@ -89,10 +89,12 @@ ___
 
 <img src="https://user-images.githubusercontent.com/48309721/72709381-36505400-3ba8-11ea-8ad6-1d213a609c1d.JPG" width=""></img><br>
 상단부의 로그인, 회원가입 버튼을 이용하여 로그인을 하거나 회원가입을 할 수 있다.<br>
+<hr>
 <img src="https://user-images.githubusercontent.com/48309721/72709241-d8237100-3ba7-11ea-8539-6ff374692551.JPG" width=""></img>
 로그인 전<br>
 <img src="https://user-images.githubusercontent.com/48309721/72709237-d8237100-3ba7-11ea-9e96-fe40764f145a.JPG" width=""></img>
 로그인 후<br>
+<hr>
 
 <C:\wamp64\www\project\header.inc.php>
 ```html
