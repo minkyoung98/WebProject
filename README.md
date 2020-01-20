@@ -87,11 +87,11 @@ ___
 <br>
 <img src="https://user-images.githubusercontent.com/48309721/71952806-62bcb580-3223-11ea-9bcc-df3076e32514.png" width="400"></img><br>
 
-<img src="https://user-images.githubusercontent.com/48309721/71950105-73682e00-3219-11ea-823e-d7098432d3dd.jpg" width=""></img><br>
+<img src="https://user-images.githubusercontent.com/48309721/72709381-36505400-3ba8-11ea-8ad6-1d213a609c1d.JPG" width=""></img><br>
 상단부의 로그인, 회원가입 버튼을 이용하여 로그인을 하거나 회원가입을 할 수 있다.<br>
-<img src="https://user-images.githubusercontent.com/48309721/71950034-2be1a200-3219-11ea-86d3-ee7f04aa40ad.JPG" width=""></img>
+<img src="https://user-images.githubusercontent.com/48309721/72709241-d8237100-3ba7-11ea-8539-6ff374692551.JPG" width=""></img>
 로그인 전<br>
-<img src="https://user-images.githubusercontent.com/48309721/71950041-2c7a3880-3219-11ea-8c43-e18ff1a0fb06.JPG" width=""></img>
+<img src="https://user-images.githubusercontent.com/48309721/72709237-d8237100-3ba7-11ea-9e96-fe40764f145a.JPG" width=""></img>
 로그인 후<br>
 
 <C:\wamp64\www\project\header.inc.php>
@@ -253,7 +253,7 @@ select 문을 이용하여 user_info테이블에 있는 id속성중 입력된 id
 로그인된 상태에서 로그아웃 버튼을 누르면 session에 저장된 id값과 name값을 제거된다.
 
 # 2.2 검색 기능
-<img src="https://user-images.githubusercontent.com/48309721/71950106-7400c480-3219-11ea-8eb6-58c21bb8f660.jpg" width=""></img><br>
+<img src="https://user-images.githubusercontent.com/48309721/72709522-862f1b00-3ba8-11ea-887e-305521ecf99c.JPG" width=""></img><br>
 상단부의 텍스트박스와 버튼을 이용하여 웹페이지에 작성되어있는 전체 글 중에서 검색어가 포함된 제목의 글을 찾을 수 있다.
 "글" 이라는 검색어를 텍스트박스에 입력하고 검색을 누르면 다음과 같이 결과를 보여주는 창이 뜬다.
 <br>
@@ -363,7 +363,7 @@ $result에 저장된 값을 테이블형식으로 입력해준다.
 
 아래의 내용은 주문문의 게시판을 예시로 기능을 설명 한다.
 
-
+<hr>
 <img src="https://user-images.githubusercontent.com/48309721/72706169-afe44400-3ba0-11ea-994f-bf4457d1e375.JPG" width=""></img>
 
 <C:\wamp64\www\project\3\editor.order_inquiry.php>
@@ -433,7 +433,32 @@ NOBBS;
 </table>
 ```
 내림차순으로 가져온 데이터를 차례로 테이블에 넣어 표 형식으로 나타낸다.
+<hr>
 
+```javascript
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
+```
+```javascript
+<script>  
+    $(document).on('click', '.table td', function(){
+        var seq = $(this).parent().find(':eq(0)').text();
+        //console.log(seq);
+        $.get('text_form.order_inquiry.php',{
+            seq: seq
+        }).done(function(data){
+            if($.trim(data)){
+                //$('#pocket').html(data);
+                location.href = 'text_form.order_inquiry.php?seq='+ seq; 
+               // $('#exampleModal').modal('show');    
+            }
+        });
+    }); 
+</script>
+```
+<img src="https://user-images.githubusercontent.com/48309721/72712208-ec6a6c80-3bad-11ea-9b85-8564acd3f49c.JPG" width=""></img>
+javascript의 click이벤트를 이용해 목록에 있는 글을 클릭하면 seq값과 일치하는 글을 보여주는 페이지로 이동한다.
+
+<hr>
 
 ## (1) 게시글 작성
 
@@ -457,7 +482,7 @@ NOBBS;
 </form>
 ```
 글작성 버튼을 눌렀을때 로그인 된 상태라면 글 작성 페이지로 이동하고, 로그인이 되있지 않다면 로그인 페이지로 이동한다.
-
+<hr>
 <img src="https://user-images.githubusercontent.com/48309721/72704848-30a14100-3b9d-11ea-8329-eb29058f419d.JPG" width=""></img>
 
 <C:\wamp64\www\project\editor.php>
@@ -567,21 +592,246 @@ if ($conn->query($sql) === TRUE) {
 }
 ```
 값들이 정상적으로 삽입되면, category 값에 따라 목록을 보여주는 창으로 이동한다.
+<hr>
 <br>
 <img src="https://user-images.githubusercontent.com/48309721/72704850-30a14100-3b9d-11ea-8880-25454e6dcfd4.JPG" width=""></img>
 <br>
 정상적으로 글이 작성된 것을 볼 수 있다.
+<hr>
 
-## (2) 게시글 수정
+## (2) 작성된 게시글 수정
 <img src="https://user-images.githubusercontent.com/48309721/72705168-11ef7a00-3b9e-11ea-8b96-5b6c5c5a6976.JPG" width="400"></img>
 <img src="https://user-images.githubusercontent.com/48309721/72705165-10be4d00-3b9e-11ea-8c7e-13f691a6bf7a.JPG" width="400"></img>
 <br>
 로그인한 아이디와 작성자가 일치하면 수정 버튼이 생긴다. 수정 버튼을 누르면 글을 수정할 수 있는 창으로 이동한다.
+
+<C:\wamp64\www\project\3\text_form.order_inquiry.php>
+```php
+<form id="cate" action = "../editor.update.php?seq=<?php echo $seq ?>" method="post">    
+<button id="index" type="button" class="btn btn-secondary">목록으로</button>
+    <?php
+        if(isset($_SESSION['id'])){
+            if($_SESSION['id']==$userid){
+                //아이디와 작성자 일치
+                echo '<input type="hidden" name="category" id="category" value="주문문의">
+                <button type="submit" class="btn btn-secondary">수정</button>';
+            }
+        }
+        else{
+            //로그인 전
+            echo '';
+        }
+    ?>
+</form>
+```
+
+<hr>
+
 <img src="https://user-images.githubusercontent.com/48309721/72705248-55e27f00-3b9e-11ea-9f4d-0b70c378bf91.JPG" width="500"></img>
+<br>
+
+<C:\wamp64\www\project\editor.update.php>
+
+```php
+$seq = isset($_GET['seq']) ? $_GET['seq'] : exit;
+$category = $_POST['category'];
+```
+선택한 글의 seq값과 category값을 받아온다.
+```php
+if($category == "A/S접수"){
+    $sql = "SELECT * FROM a_s WHERE seq = $seq";
+}
+else if($category == "주문문의"){
+    $sql = "SELECT * FROM order_inquiry WHERE seq = $seq";
+}
+else if($category == "고객상담"){
+    $sql = "SELECT * FROM customer_consultation WHERE seq = $seq";
+}
+else if($category == "공지사항"){
+    $sql = "SELECT * FROM notice WHERE seq = $seq";
+}
+else if($category == "고객후기"){
+    $sql = "SELECT * FROM customer_reviews WHERE seq = $seq";
+}
+```
+category에 맞는 DB table에서 seq값이 일치하는 행의 데이터를 가져온다.
+```php
+if ($result->num_rows > 0) {
+    // output data of each row
+    if($row = $result->fetch_assoc()){
+        $title = $row['title'];
+        $question = $row['question'];
+        $category = $row['category'];
+    }
+} else {
+    echo "0 results";
+}
+```
+가져온 값을 변수에 저장한다.
+```php
+<form action="editor.pro.php" method="post">
+    <input type="hidden" name="mode" value="update">
+    <input type="hidden" name="seq" value="<?php echo $seq ?>">
+
+    <div><h2>글 수정</h2></div>
+    <hr>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">제목</label>
+        <div class="col-sm-10">
+            <input type="text" name="title" class="form-control" placeholder="글제목 입력" required="required" value="<?php echo $title ?>">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">카테고리</label>
+        <div class="col-sm-10">
+            <select name="category" class="form-control">
+                <option value="공지사항" <?php if($category == '공지사항'){echo 'selected';}?>>공지사항</option>
+                <option value="고객후기" <?php if($category == '고객후기'){echo 'selected';}?>>고객후기</option>
+                <option value="주문문의" <?php if($category == '주문문의'){echo 'selected';}?>>주문문의</option>
+                <option value="고객상담" <?php if($category == '고객상담'){echo 'selected';}?>>고객상담</option>
+                <option value="A/S접수" <?php if($category == 'A/S접수'){echo 'selected';}?>>A/S접수</option>                  
+            </select>
+        </div>
+    </div>
+        
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">내용</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" name="question" id="editor" placeholder="문의글 입력" required="required"><?php echo $question ?></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-danger btn-lg btn-block">문의글수정</button>
+        </div>
+    </div>
+</form>
+```
+변수에 저장한 값을 출력하여 보여준다.
+<hr><br>
+
 <img src="https://user-images.githubusercontent.com/48309721/72705314-7f9ba600-3b9e-11ea-9747-6fa8402daf1a.JPG" width="500"></img>
 <br>
-글의 내용을 수정 한 후 문의글수정 버튼을 누르면 글이 수정된 것을 볼수 있다.
-<img src="https://user-images.githubusercontent.com/48309721/72705336-904c1c00-3b9e-11ea-8779-d97e43bcbdfa.JPG" width="500"></img>
+글의 내용을 수정 한 후 문의글수정 버튼을 누르면 mode, title, category, question 값들을 editor.pro.php 로 보낸다.
 
+<C:\wamp64\www\project\editor.pro.php>
+```php
+else if($mode == 'update'){
+
+    if($category=="공지사항"){
+        $sql = "UPDATE notice SET title='$title', category='$category', question='$question', reg_date=NOW() WHERE seq=$seq";
+    }
+    else if($category=="고객후기"){
+        $sql = "UPDATE customer_reviews SET title='$title', category='$category', question='$question', reg_date=NOW() WHERE seq=$seq";
+    }
+    else if($category=="주문문의"){
+        $sql = "UPDATE order_inquiry SET title='$title', category='$category', question='$question', reg_date=NOW() WHERE seq=$seq";
+    }
+    else if($category=="고객상담"){
+        $sql = "UPDATE customer_consultation SET title='$title', category='$category', question='$question', reg_date=NOW() WHERE seq=$seq";
+    }
+    else if($category=="A/S접수"){
+        $sql = "UPDATE a_s SET title='$title', category='$category', question='$question', reg_date=NOW() WHERE seq=$seq";
+    }
+}
+```
+mode가 update일 경우 update문을 이용하여 category에 따른 DB테이블에 userid, title, question 값들을 수정해준다.
+
+```php
+if ($conn->query($sql) === TRUE) {
+    if($category == "공지사항"){
+        header('Location: /project/4/editor.notice.php');
+    }
+    else if($category == "고객후기"){
+        header('Location: /project/4/editor.customer_reviews.php');
+    }
+    else if($category == "주문문의"){
+        header('Location: /project/3/editor.order_inquiry.php');
+    }
+    else if($category == "고객상담"){
+        header('Location: /project/3/editor.customer_consultation.php');
+    }
+    else if($category == "A/S접수"){
+        header('Location: /project/3/editor.a_s.php');
+    }
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+```
+값들이 정상적으로 삽입되면, category 값에 따라 목록을 보여주는 창으로 이동한다.
+
+<hr>
+
+<img src="https://user-images.githubusercontent.com/48309721/72705336-904c1c00-3b9e-11ea-8779-d97e43bcbdfa.JPG" width="500"></img>
+<br>
+게시글이 수정된 것을 볼 수 있다.
+
+
+<hr>
 
 # 2.4 카카오 다음지도 API  
+카카오 개발자 페이지
+<a href="https://developers.kakao.com/" target="_blank">https://developers.kakao.com/</a> 에 접속해 우측 상단 로그인을 눌러 로그인을 한다.
+
+<img src="https://user-images.githubusercontent.com/48309721/72715777-71f11b00-3bb4-11ea-9b27-68778eadb665.JPG" width="600"></img>
+<img src="https://user-images.githubusercontent.com/48309721/72715779-71f11b00-3bb4-11ea-9be4-fc6f7f810713.JPG" width="600"></img>
+<br> '내 애플리케이션 -> 앱 만들기' 를 클릭한다.<br>
+<img src="https://user-images.githubusercontent.com/48309721/72715781-71f11b00-3bb4-11ea-808c-f1e798f9b614.JPG" width="600"></img>
+<br>이름을 입력한 후 '앱 만들기' 버튼을 클릭한다.<br>
+<img src="https://user-images.githubusercontent.com/48309721/72715782-7289b180-3bb4-11ea-9d49-4692e008a688.JPG" width="400"></img>
+<br>팝업창이 뜨면 '계속 진행' 버튼을 클릭한다.<br> 완료되면 아래와 같이 API키가 발급된다.<br>
+<img src="https://user-images.githubusercontent.com/48309721/72715784-7289b180-3bb4-11ea-8546-8e096912217b.JPG" width="600"></img>
+<br>키가 생성되먄 좌측 메뉴의 '설정->일반' 에 들어간다.<br>
+<img src="https://user-images.githubusercontent.com/48309721/72716171-21c68880-3bb5-11ea-9145-68927abbb964.JPG" width="600"></img>
+<br>일반 페이지가 나오면 '플랫폼 추가' 버튼을 클릭한다.<br>
+<img src="https://user-images.githubusercontent.com/48309721/72715786-7289b180-3bb4-11ea-9c48-1a1dd28769a2.JPG" width="400"></img>
+<br>팝업이 표출되면, 해당 지도가 표출되어야 하는 사이트의 주소를 입력하고 '추가' 버튼을 클릭한다.
+플랫폼을 추가 하지 않으면 지도가 나타나지 않는다.<br>
+<img src="https://user-images.githubusercontent.com/48309721/72715787-73224800-3bb4-11ea-84dd-b593aba5fa51.JPG" width="600"></img>
+
+<C:\wamp64\www\project\4\map.php>
+```javascript
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey='발급받은 JavaScript key'"></script>
+```
+위의 부분에 발급받은 key 중 JavaScript key를 넣어준다.
+```javascript
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapCenter = new daum.maps.LatLng(37.049634, 127.201022), // 지도의 중심 좌표
+    mapOption = {
+        center: mapCenter, // 지도의 중심 좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new daum.maps.Map(mapContainer, mapOption);
+
+// 지도에 올릴 마커를 생성합니다.
+var mMarker = new daum.maps.Marker({
+    position: mapCenter, // 지도의 중심좌표에 올립니다.
+    map: map // 생성하면서 지도에 올립니다.
+});
+
+// 지도에 올릴 장소명 인포윈도우 입니다.
+var mLabel = new daum.maps.InfoWindow({
+    position: daum.maps.LatLng(37.049784, 127.203195), // 지도의 중심좌표에 올립니다.
+    content: '그린가구' // 인포윈도우 내부에 들어갈 컨텐츠 입니다.
+});
+
+var infowindow = new daum.maps.InfoWindow({
+    map: map,
+    position: new daum.maps.LatLng(37.049759,127.203223),
+    content: '명당1리 (34097)'
+});
+
+var infowindow = new daum.maps.InfoWindow({
+    map: map,
+    position: new daum.maps.LatLng(37.049646,127.203493),
+    content: '명당1리 (34098)'
+});
+mLabel.open(map, mMarker); // 지도에 올리면서, 두번째 인자로 들어간 마커 위에 올라가도록 설정합니다.
+
+</script>
+```
+<img src="https://user-images.githubusercontent.com/48309721/72717352-3277fe00-3bb7-11ea-8d63-43fa53b3a034.JPG" width="700"></img>
