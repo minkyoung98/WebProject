@@ -84,6 +84,7 @@ ___
 
 # 2.1 로그인 회원가입 기능
 데이터베이스 project에 있는 테이블 중 회원 정보 저장 테이블인 user_info 테이블을 사용한다.
+<br>
 <img src="https://user-images.githubusercontent.com/48309721/71952806-62bcb580-3223-11ea-9bcc-df3076e32514.png" width="400"></img><br>
 
 <img src="https://user-images.githubusercontent.com/48309721/71950105-73682e00-3219-11ea-823e-d7098432d3dd.jpg" width=""></img><br>
@@ -110,7 +111,6 @@ ___
         ?>
     </form>
 ```
-
 <br><br>
 ## (1) 회원가입
 회원가입 버튼을 누르면 회원가입 창으로 이동한다.<br>
@@ -255,9 +255,10 @@ select 문을 이용하여 user_info테이블에 있는 id속성중 입력된 id
 # 2.2 검색 기능
 <img src="https://user-images.githubusercontent.com/48309721/71950106-7400c480-3219-11ea-8eb6-58c21bb8f660.jpg" width=""></img><br>
 상단부의 텍스트박스와 버튼을 이용하여 웹페이지에 작성되어있는 전체 글 중에서 검색어가 포함된 제목의 글을 찾을 수 있다.
-"주문" 이라는 검색어를 텍스트박스에 입력하고 검색을 누르면 다음과 같이 결과를 보여주는 창이 뜬다.
+"글" 이라는 검색어를 텍스트박스에 입력하고 검색을 누르면 다음과 같이 결과를 보여주는 창이 뜬다.
 <br>
-<img src="https://user-images.githubusercontent.com/48309721/71955038-89321f00-322a-11ea-971d-16c00919b25a.JPG" width="600"></img>
+<img src="https://user-images.githubusercontent.com/48309721/72704462-3ea29200-3b9c-11ea-93e5-042d11a1b3e5.JPG" width="600"></img>
+<img src="https://user-images.githubusercontent.com/48309721/72704411-1b77e280-3b9c-11ea-913f-3682d07095c3.JPG" width="600"></img>
 
 <C:\wamp64\www\project\header.inc.php>
 ```html
@@ -360,9 +361,227 @@ $result에 저장된 값을 테이블형식으로 입력해준다.
 
 <img src="https://user-images.githubusercontent.com/48309721/71952808-66503c80-3223-11ea-86b7-7e38aabad809.png" width=""></img>
 
+아래의 내용은 주문문의 게시판을 예시로 기능을 설명 한다.
+
+
+<img src="https://user-images.githubusercontent.com/48309721/72706169-afe44400-3ba0-11ea-994f-bf4457d1e375.JPG" width=""></img>
+
+<C:\wamp64\www\project\3\editor.order_inquiry.php>
+
+```php
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+$dbname = "project";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM order_inquiry ORDER BY seq DESC ";
+$result = $conn->query($sql);
+?>
+```
+DB의 order_inquiry테이블의 sep값 기준 내림차순으로 데이터를 가져온다.
+
+<C:\wamp64\www\project\3\editor.order_inquiry.php>
+```php
+<table class="table table-bordered table-striped">
+    <colgroup>
+        <col width="12%">
+        <col width="15%">
+        <col width="*">
+        <col width="20%">
+        <col width="20%">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>카테고리</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>등록일</th>    
+        </tr>
+    </thead> 
+    <tbody>
+<?php
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo <<< BBS
+            <tr id="text">
+                <td>{$row['seq']}</td>
+                <td>{$row['category']}</td>
+                <td>{$row['title']}</td>
+                <td>{$row['userid']}</td>
+                <td>{$row['reg_date']}</td>
+            </tr>
+BBS;
+        }
+    } else {
+        echo <<< NOBBS
+        작성된 글이 없습니다.
+NOBBS;
+    }
+    $conn->close();
+?>
+    </tbody>
+</table>
+```
+내림차순으로 가져온 데이터를 차례로 테이블에 넣어 표 형식으로 나타낸다.
+
+
 ## (1) 게시글 작성
 
+<img src="https://user-images.githubusercontent.com/48309721/72704851-30a14100-3b9d-11ea-9ebf-f069f8480415.JPG" width=""></img>
+<br>
+<C:\wamp64\www\project\3\editor.order_inquiry.php>
+```php
+<form id="cate" action="../editor.php" method="post">
+    <input type="hidden" name="category" id="category" value="주문문의"><br>
+
+    <?php
+    if(isset($_SESSION['id'])){
+        //로그인 후
+        echo '<h2><button type="submit" class="btn btn-secondary">글작성</button></h2>';
+    }
+    else{
+        //로그인 전
+        echo '<h2><a href="/project/0/login.php"class="btn btn-secondary"><div id="button">글작성</div></a></h2>';
+    }
+    ?>
+</form>
+```
+글작성 버튼을 눌렀을때 로그인 된 상태라면 글 작성 페이지로 이동하고, 로그인이 되있지 않다면 로그인 페이지로 이동한다.
+
+<img src="https://user-images.githubusercontent.com/48309721/72704848-30a14100-3b9d-11ea-8329-eb29058f419d.JPG" width=""></img>
+
+<C:\wamp64\www\project\editor.php>
+```php
+<?php
+    $category=$_POST['category'];
+?>
+```
+```php
+<main id="main" class="pt-4">
+    <form action="editor.pro.php" method="post">
+        <input type="hidden" name="mode" value="insert">
+        <?php
+            echo '<input type="hidden" name="id" value="'.$_SESSION['id'].'">'
+        ?>
+    
+        <div><h2>글 작성</h2></div>
+        <hr>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">제목</label>
+            <div class="col-sm-10">
+                <input type="text" name="title" class="form-control" placeholder="글제목 입력" required="required">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">카테고리</label>
+            <div class="col-sm-10">
+                <select name="category" class="form-control">
+                    <option value="공지사항" <?php if($category == '공지사항'){echo 'selected';}?>>공지사항</option>
+                    <option value="고객후기" <?php if($category == '고객후기'){echo 'selected';}?>>고객후기</option>
+                    <option value="주문문의" <?php if($category == '주문문의'){echo 'selected';}?>>주문문의</option>
+                    <option value="고객상담" <?php if($category == '고객상담'){echo 'selected';}?>>고객상담</option>
+                    <option value="A/S접수" <?php if($category == 'A/S접수'){echo 'selected';}?>>A/S접수</option>                  
+                </select>
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">내용</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" name="question" id="editor" placeholder="문의글 입력" required="required"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-secondary">글 작성하기</button>
+            </div>
+        </div>
+    </form>
+</main>
+```
+카테고리는 받아온 값으로 자동으로 선택되고 제목과 내용을 입력한 후 글 작성하기 버튼을 누르면 mode, title, category, question 값들을 editor.pro.php 로 보낸다.
+
+<C:\wamp64\www\project\editor.pro.php>
+```php
+$mode = $_POST['mode'];
+$seq = isset($_POST['seq']) ? $_POST['seq'] : 0;
+$userid = isset($_POST['id']) ? $_POST['id'] : ''; // $_REQUEST['userid']
+$title = $_POST['title'];
+$category = $_POST['category'];
+$question = $_POST['question'];
+```
+받은 값들을 변수에 저장한다.
+```php
+if($mode == 'insert'){
+
+    if($category=="공지사항"){
+        $sql = "INSERT INTO notice (userid, title, category, question) VALUES ('$userid', '$title', '$category', '$question')";
+    }
+    else if($category=="고객후기"){
+        $sql = "INSERT INTO customer_reviews (userid, title, category, question) VALUES ('$userid', '$title', '$category', '$question')";
+    }
+    else if($category=="주문문의"){
+        $sql = "INSERT INTO order_inquiry (userid, title, category, question) VALUES ('$userid', '$title', '$category', '$question')";
+    }
+    else if($category=="고객상담"){
+        $sql = "INSERT INTO customer_consultation (userid, title, category, question) VALUES ('$userid', '$title', '$category', '$question')";
+    }
+    else if($category=="A/S접수"){
+        $sql = "INSERT INTO a_s (userid, title, category, question) VALUES ('$userid', '$title', '$category', '$question')";
+    }
+
+} 
+```
+mode가 insert일 경우 insert문을 이용하여 category에 따른 DB테이블에 userid, title, question 값들을 넣어준다.
+
+```php
+if ($conn->query($sql) === TRUE) {
+    if($category == "공지사항"){
+        header('Location: /project/4/editor.notice.php');
+    }
+    else if($category == "고객후기"){
+        header('Location: /project/4/editor.customer_reviews.php');
+    }
+    else if($category == "주문문의"){
+        header('Location: /project/3/editor.order_inquiry.php');
+    }
+    else if($category == "고객상담"){
+        header('Location: /project/3/editor.customer_consultation.php');
+    }
+    else if($category == "A/S접수"){
+        header('Location: /project/3/editor.a_s.php');
+    }
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+```
+값들이 정상적으로 삽입되면, category 값에 따라 목록을 보여주는 창으로 이동한다.
+<br>
+<img src="https://user-images.githubusercontent.com/48309721/72704850-30a14100-3b9d-11ea-8880-25454e6dcfd4.JPG" width=""></img>
+<br>
+정상적으로 글이 작성된 것을 볼 수 있다.
 
 ## (2) 게시글 수정
+<img src="https://user-images.githubusercontent.com/48309721/72705168-11ef7a00-3b9e-11ea-8b96-5b6c5c5a6976.JPG" width="400"></img>
+<img src="https://user-images.githubusercontent.com/48309721/72705165-10be4d00-3b9e-11ea-8c7e-13f691a6bf7a.JPG" width="400"></img>
+<br>
+로그인한 아이디와 작성자가 일치하면 수정 버튼이 생긴다. 수정 버튼을 누르면 글을 수정할 수 있는 창으로 이동한다.
+<img src="https://user-images.githubusercontent.com/48309721/72705248-55e27f00-3b9e-11ea-9f4d-0b70c378bf91.JPG" width="500"></img>
+<img src="https://user-images.githubusercontent.com/48309721/72705314-7f9ba600-3b9e-11ea-9747-6fa8402daf1a.JPG" width="500"></img>
+<br>
+글의 내용을 수정 한 후 문의글수정 버튼을 누르면 글이 수정된 것을 볼수 있다.
+<img src="https://user-images.githubusercontent.com/48309721/72705336-904c1c00-3b9e-11ea-8779-d97e43bcbdfa.JPG" width="500"></img>
+
 
 # 2.4 카카오 다음지도 API  
