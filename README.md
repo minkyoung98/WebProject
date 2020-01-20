@@ -151,9 +151,10 @@ ___
 </div>
 ```
 텍스트박스의 required 속성을 "required"로 설정해주어 모든 값을 입력하도록 한다. 입력된 값들은 POST형식으로 "signUp.pro.php"파일로 보낸다.
-<br><br>
+<hr>
 <img src="https://user-images.githubusercontent.com/48309721/71950037-2c7a3880-3219-11ea-9603-cf0f31229548.JPG" width="320"></img><br>
 <img src="https://user-images.githubusercontent.com/48309721/71950036-2be1a200-3219-11ea-9885-173e199fe344.JPG" width="320"></img><br>
+<hr>
 <C:\wamp64\www\project\0\signUp.pro.php>
 ```php
 if($pw!=$pwc)
