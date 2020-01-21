@@ -1,4 +1,23 @@
 # Green Furniture Web Site
+[![Everything Is AWESOME](https://user-images.githubusercontent.com/48309721/72776892-0f9d2680-3c57-11ea-9d8b-c193ce8e68c8.JPG)](https://www.youtube.com/watch?v=YmsL3vS9a6M "Everything Is AWESOME")
+
+# 목차
+
+## 1. 개발 환경 구축
+* 1.1 Wampserver 설치
+* 1.2 데이터 베이스 생성
+<br><br>
+## 2. 웹 페이지 기능
+* 2.1 로그인 회원가입 기능
+    - (1)회원가입
+    - (2)로그인
+* 2.2 검색 기능
+* 2.3 게시판 기능
+    - (1)게시글 작성
+    - (2)작성된 게시글 수정
+* 2.4 카카오 다음지도 API
+
+<hr>
 
 # 1. 개발 환경 구축
 ## 1.1 Wampserver 설치
@@ -79,7 +98,8 @@ SET PASSWORD FOR root@localhost = PASSWORD('your_root_password');
 ___
 <img src="https://user-images.githubusercontent.com/48309721/71952863-a1eb0680-3223-11ea-9547-abfbd8479c05.png" ></img>
 결과적으로 그림과 같이 project DB에 8개의 테이블이 생성되었다.
-<br><br>
+<hr>
+
 # 2.웹 페이지 기능
 
 # 2.1 로그인 회원가입 기능
@@ -157,6 +177,7 @@ ___
 <img src="https://user-images.githubusercontent.com/48309721/71950037-2c7a3880-3219-11ea-9603-cf0f31229548.JPG" width="320"></img><br>
 <img src="https://user-images.githubusercontent.com/48309721/71950036-2be1a200-3219-11ea-9885-173e199fe344.JPG" width="320"></img><br>
 <hr>
+
 <C:\wamp64\www\project\0\signUp.pro.php>
 ```php
 if($pw!=$pwc)
@@ -253,7 +274,7 @@ select 문을 이용하여 user_info테이블에 있는 id속성중 입력된 id
     header('Location: ../index.php');
 ?>
 ```
-로그인된 상태에서 로그아웃 버튼을 누르면 session에 저장된 id값과 name값을 제거된다.
+로그인된 상태에서 로그아웃 버튼을 누르면 session에 저장된 id값과 name값이 제거된다.
 
 # 2.2 검색 기능
 <img src="https://user-images.githubusercontent.com/48309721/72709522-862f1b00-3ba8-11ea-887e-305521ecf99c.JPG" width=""></img><br>
