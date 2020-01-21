@@ -1,5 +1,5 @@
 # Green Furniture Web Site
-[![Everything Is AWESOME](https://user-images.githubusercontent.com/48309721/72776892-0f9d2680-3c57-11ea-9d8b-c193ce8e68c8.JPG)](https://www.youtube.com/watch?v=1nL0_OowGOk "Everything Is AWESOME")
+[![Everything Is AWESOME](https://user-images.githubusercontent.com/48309721/72776892-0f9d2680-3c57-11ea-9d8b-c193ce8e68c8.JPG)](https://www.youtube.com/watch?v=1nL0_OowGOk "클릭하여 YouTube로 이동")
 
 # 목차
 
